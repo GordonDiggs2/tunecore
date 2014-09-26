@@ -18,7 +18,7 @@
 %ul
   - Artist.last(10).each do |artist|
     %li
-      %a{ href: artist_path(artist) }= ArtistPresenter.new(@result).title_string
+      %a{ href: artist_path(artist) }= ArtistPresenter.new(artist).title_string
 
 %h2 Last 10 Albums
 %ul
