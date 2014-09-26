@@ -5,6 +5,7 @@ gem 'rails', '3.2.19'
 gem 'pg'
 gem 'puma'
 gem 'foreman'
+gem 'textacular'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
