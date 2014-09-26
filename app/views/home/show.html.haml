@@ -1,3 +1,13 @@
+- if flash[:error]
+  .error
+    %strong= flash[:error]
+
+%h2 Search
+%form{ action: '/search', method: 'GET' }
+  %input.search{ type: 'search', name: 'q', placeholder: 'Search query (song, artist, album title, or year)' }
+  %input{ type: 'submit', value: 'Search' }
+
+
 %h2 Last 10 Songs
 %ul
   - Song.last(10).each do |song|
@@ -8,7 +18,7 @@
 %ul
   - Artist.last(10).each do |artist|
     %li
-      %a{ href: artist_path(artist) }= artist.name
+      %a{ href: artist_path(artist) }= ArtistPresenter.new(@result).title_string
 
 %h2 Last 10 Albums
 %ul
