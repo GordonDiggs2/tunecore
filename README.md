@@ -18,5 +18,12 @@ Feel free to  install gems. You should use bundler. Please upload the finished c
 ```bash
 $ bundle install
 $ bundle exec rake db:create db:migrate db:seed
+$ bundle exec foreman start
+```
+
+### Running tests
+
+```bash
+$ bundle exec rspec
 ```
 

@@ -1,0 +1,17 @@
+%h2 Last 10 Songs
+%ul
+  - Song.last(10).each do |song|
+    %li
+      %a{ href: song_path(song) }= SongPresenter.new(song).title_string
+
+%h2 Last 10 Artists
+%ul
+  - Artist.last(10).each do |artist|
+    %li
+      %a{ href: artist_path(artist) }= artist.name
+
+%h2 Last 10 Albums
+%ul
+  - Album.last(10).each do |album|
+    %li
+      %a{ href: album_path(album) }= AlbumPresenter.new(album).title_string
