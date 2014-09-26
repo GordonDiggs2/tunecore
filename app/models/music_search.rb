@@ -6,6 +6,12 @@ class MusicSearch < ActiveRecord::Base
   belongs_to :result, polymorphic: true
 
   def self.search(query)
-    super.preload(:result).map(&:result)
+    Rails.cache.fetch([cache_key, query]) do
+      super.preload(:result).map(&:result)
+    end
+  end
+
+  def self.cache_key
+    ['MusicSearch', Album.maximum(:updated_at).to_i, Artist.maximum(:updated_at).to_i, Song.maximum(:updated_at).to_i].join('/')
   end
 end
