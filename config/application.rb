@@ -66,5 +66,9 @@ module Tunecore
     config.assets.version = '1.0'
 
     config.i18n.enforce_available_locales = true
+
+    config.generators do |g|
+      g.test_framework      :rspec
+    end
   end
 end

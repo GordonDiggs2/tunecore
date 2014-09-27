@@ -1,6 +1,7 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'random-word'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
@@ -12,4 +13,8 @@ RSpec.configure do |config|
   config.order = "random"
   config.global_fixtures = :all
   config.render_views
+end
+
+def random_name
+  "#{RandomWord.adjs.next} #{RandomWord.nouns.next}".titleize
 end
