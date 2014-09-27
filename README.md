@@ -12,6 +12,7 @@ Minimum Requirements
 Open ended question we can talk about when you’re here: What if we had 100 million songs.  How might you deal with this kind of search?
 
 * Elastic search with globalid gem
+* Live search
 
 Feel free to  install gems. You should use bundler. Please upload the finished code somewhere that we can review it.
 
@@ -28,4 +29,3 @@ $ bundle exec foreman start
 ```bash
 $ bundle exec rspec
 ```
-
